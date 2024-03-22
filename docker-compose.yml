@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgress:lastest
+    volumes:
+      - postgres-data:/var/lib.postgressql/data
+    environment:
+      POSTGRES_BD: mydatabase
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    networks:
+      mynetwork:
+  backend:
+  frontend:
+networks:
+  mynetwork:
+volumes:
+  postgres-data:
